@@ -1,4 +1,4 @@
-package org.iesvdm.tutorial.domain.enums;
+package org.iesvdm.tutorial.domain.Ejer2.enums;
 
 public enum ClasificacionEnum {
 

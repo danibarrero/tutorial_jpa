@@ -2,8 +2,8 @@ package org.iesvdm.tutorial;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.iesvdm.tutorial.domain.Idioma;
-import org.iesvdm.tutorial.domain.Pelicula;
+import org.iesvdm.tutorial.domain.Ejer2.Idioma;
+import org.iesvdm.tutorial.domain.Ejer2.Pelicula;
 import org.iesvdm.tutorial.repository.IdiomaRepository;
 import org.iesvdm.tutorial.repository.PeliculaRepository;
 import org.junit.jupiter.api.*;
@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
-
-import java.util.HashSet;
 
 /**
  * TEST ONETOMANY EAGER

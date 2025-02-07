@@ -1,6 +1,6 @@
 package org.iesvdm.tutorial.repository;
 
-import org.iesvdm.tutorial.domain.Idioma;
+import org.iesvdm.tutorial.domain.Ejer2.Idioma;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

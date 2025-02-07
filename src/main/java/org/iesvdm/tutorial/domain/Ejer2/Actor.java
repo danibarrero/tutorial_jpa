@@ -1,8 +1,9 @@
-package org.iesvdm.tutorial.domain;
+package org.iesvdm.tutorial.domain.Ejer2;
 
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Data
@@ -12,14 +13,16 @@ import java.util.Set;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
 @Entity
-public class CaracteristicaEspecial {
+public class Actor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
 
-    private String caracteristica;
+    private String nombre;
+    private String apellidos;
+    private LocalDateTime ultima_actualizacion;
 
     @ManyToMany
     private Set<Pelicula> peliculas;

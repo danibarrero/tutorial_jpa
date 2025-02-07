@@ -2,6 +2,7 @@ package org.iesvdm.tutorial.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.iesvdm.tutorial.domain.Ejer2.PeliculaCategoria;
 
 import java.util.Set;
 

@@ -3,14 +3,11 @@ package org.iesvdm.tutorial.service;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
-import org.iesvdm.tutorial.domain.Pelicula;
-import org.iesvdm.tutorial.exception.EntityNotFoundException;
+import org.iesvdm.tutorial.domain.Ejer2.Pelicula;
 import org.iesvdm.tutorial.exception.PeliculaNotFoundException;
 import org.iesvdm.tutorial.repository.PeliculaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.support.TransactionTemplate;
 
 import java.util.List;
 

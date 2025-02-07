@@ -1,7 +1,8 @@
-package org.iesvdm.tutorial.domain;
+package org.iesvdm.tutorial.domain.Ejer2;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.iesvdm.tutorial.domain.Categoria;
 
 @Data
 @AllArgsConstructor

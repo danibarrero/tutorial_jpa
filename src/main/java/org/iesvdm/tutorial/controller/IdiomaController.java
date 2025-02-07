@@ -7,22 +7,16 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.fge.jsonpatch.JsonPatch;
 import com.github.fge.jsonpatch.JsonPatchException;
-import jakarta.validation.constraints.Size;
 import lombok.extern.slf4j.Slf4j;
-import org.iesvdm.tutorial.domain.Idioma;
-import org.iesvdm.tutorial.domain.Pelicula;
+import org.iesvdm.tutorial.domain.Ejer2.Idioma;
 import org.iesvdm.tutorial.exception.EntityNotFoundException;
-import org.iesvdm.tutorial.repository.IdiomaRepository;
 import org.iesvdm.tutorial.service.IdiomaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @RestController

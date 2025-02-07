@@ -1,8 +1,7 @@
 package org.iesvdm.tutorial.service;
 
 
-import org.iesvdm.tutorial.domain.Idioma;
-import org.iesvdm.tutorial.domain.Pelicula;
+import org.iesvdm.tutorial.domain.Ejer2.Idioma;
 import org.iesvdm.tutorial.exception.EntityNotFoundException;
 import org.iesvdm.tutorial.exception.NotCouplingIdException;
 import org.iesvdm.tutorial.repository.IdiomaRepository;

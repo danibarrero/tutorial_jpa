@@ -1,10 +1,10 @@
-package org.iesvdm.tutorial.domain;
+package org.iesvdm.tutorial.domain.Ejer2;
 
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.*;
-import org.iesvdm.tutorial.domain.enums.ClasificacionEnum;
+import org.iesvdm.tutorial.domain.Ejer2.enums.ClasificacionEnum;
 import org.iesvdm.tutorial.serializer.PeliculaSerializer;
 
 import java.math.BigDecimal;
