@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.*;
+import org.iesvdm.tutorial.domain.enums.ClasificacionEnum;
 import org.iesvdm.tutorial.serializer.PeliculaSerializer;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Data
@@ -26,15 +28,34 @@ public class Pelicula {
 
     private String titulo;
 
+    private Integer anioLanzamiento;
+
     @ManyToOne
-    //@JsonBackReference
     @ToString.Exclude
     private Idioma idioma;
 
-    // @ManyToMany
-    // private Set<Categoria> categorias; //El nombre es el mismo que el mappedBy
+    @ManyToOne
+    private Idioma idiomaOriginal;
+
+    private Integer duracionAlquiler;
+
+    @Column(precision = 4, scale = 2)
+    private BigDecimal rentalRate;
+
+    private short duracion;
+
+    @Column(precision = 5, scale = 2)
+    private BigDecimal replacementCost;
+
+    private ClasificacionEnum clasificacionEnum;
+
+    @ManyToMany(mappedBy = "peliculas")
+    private Set<CaracteristicaEspecial> caracteristicasEspeciales;
 
     @OneToMany(mappedBy = "pelicula")
     private Set<PeliculaCategoria> peliculaCategoria;
+
+    @ManyToMany(mappedBy = "peliculas")
+    private Set<Actor> actores;
 
 }
