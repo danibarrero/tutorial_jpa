@@ -6,19 +6,21 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Comentario {
+
+@Entity
+public class PeliculaCategoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private long id;
-    private String texto;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "tutorial_id",updatable = false)
-    @ToString.Exclude
-    private Tutorial tutorial;
+    private Categoria categoria;
+
+    @ManyToOne
+    private Pelicula pelicula;
 
 }

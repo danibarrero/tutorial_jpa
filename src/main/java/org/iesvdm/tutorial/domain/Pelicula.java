@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.iesvdm.tutorial.serializer.PeliculaSerializer;
 
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,5 +30,11 @@ public class Pelicula {
     //@JsonBackReference
     @ToString.Exclude
     private Idioma idioma;
+
+    // @ManyToMany
+    // private Set<Categoria> categorias; //El nombre es el mismo que el mappedBy
+
+    @OneToMany(mappedBy = "pelicula")
+    private Set<PeliculaCategoria> peliculaCategoria;
 
 }

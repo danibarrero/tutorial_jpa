@@ -40,6 +40,14 @@ public class TutorialComentarioTests {
     }
 
     @Test
+    @Order(8)
+    public void prueba() {
+       Tutorial tutorial = tutorialRepository.save(Tutorial.builder().titulo("Titulo1").build());
+       Tutorial tutorial2 = tutorialRepository.findById(tutorial.getId()).orElse(null);
+
+    }
+
+    @Test
     @Order(1)
     public void grabarPadreAHijosPorColeccion() {
 

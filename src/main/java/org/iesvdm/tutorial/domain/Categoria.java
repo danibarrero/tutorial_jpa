@@ -9,17 +9,23 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Tutorial {
+
+@Entity
+public class Categoria {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private long id;
+    private Long id;
 
-    @Column(unique = true, length = 30, nullable = false)
-    private String titulo;
+    @Column(length = 30, nullable = false)
+    private String nombre;
 
-    @OneToMany(mappedBy = "tutorial", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private Set<Comentario> comentarios;
+    // @ManyToMany(mappedBy = "categorias")
+    // private Set<Pelicula> peliculas;
+
+    @OneToMany(mappedBy = "categoria")
+    private Set<PeliculaCategoria> peliculaCategoria;
+
 }
