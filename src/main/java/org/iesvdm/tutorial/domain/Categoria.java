@@ -24,6 +24,6 @@ public class Categoria {
     // @ManyToMany(mappedBy = "categorias")
     // private Set<Pelicula> peliculas;
 
-    @OneToMany(mappedBy = "categoria")
+    // @OneToMany(mappedBy = "categoria")
 
 }
