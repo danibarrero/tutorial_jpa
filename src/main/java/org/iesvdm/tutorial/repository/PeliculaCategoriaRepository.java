@@ -1,6 +1,6 @@
 package org.iesvdm.tutorial.repository;
 
-import org.iesvdm.tutorial.domain.PeliculaCategoria;
+import org.iesvdm.tutorial.domain.Ejer2.PeliculaCategoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

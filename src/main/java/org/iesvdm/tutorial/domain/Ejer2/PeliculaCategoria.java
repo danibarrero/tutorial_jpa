@@ -2,7 +2,6 @@ package org.iesvdm.tutorial.domain.Ejer2;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.iesvdm.tutorial.domain.Categoria;
 
 @Data
 @AllArgsConstructor
@@ -22,6 +21,8 @@ public class PeliculaCategoria {
     private Categoria categoria;
 
     @ManyToOne
+    //Se rompe el bucle hacia pelicula
+    @ToString.Exclude
     private Pelicula pelicula;
 
 }

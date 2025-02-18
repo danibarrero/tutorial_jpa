@@ -2,10 +2,10 @@ package org.iesvdm.tutorial;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.iesvdm.tutorial.domain.Actor;
-import org.iesvdm.tutorial.domain.Idioma;
-import org.iesvdm.tutorial.domain.Pelicula;
-import org.iesvdm.tutorial.enums.ClasificacionEnum;
+import org.iesvdm.tutorial.domain.Ejer2.Actor;
+import org.iesvdm.tutorial.domain.Ejer2.Idioma;
+import org.iesvdm.tutorial.domain.Ejer2.Pelicula;
+import org.iesvdm.tutorial.domain.Ejer2.enums.ClasificacionEnum;
 import org.iesvdm.tutorial.repository.ActorRepository;
 import org.iesvdm.tutorial.repository.IdiomaRepository;
 import org.iesvdm.tutorial.repository.PeliculaRepository;
@@ -70,7 +70,7 @@ public class PeliculaActorTests {
 
         Pelicula pelicula = Pelicula.builder()
                 .titulo("Enter the Dragon")
-                .anyoLanzamiento(1973)
+                .anioLanzamiento(1973)
                 .duracionAlquiler(3)
                 .rentalRate(BigDecimal.valueOf(20.56D))
                 .idioma(idiomaCh)

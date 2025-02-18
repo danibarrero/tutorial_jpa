@@ -1,4 +1,4 @@
-package org.iesvdm.tutorial.domain;
+package org.iesvdm.tutorial.domain.Ejer2;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,9 +21,13 @@ public class Categoria {
 
     @Column(length = 30, nullable = false)
     private String nombre;
-    // @ManyToMany(mappedBy = "categorias")
-    // private Set<Pelicula> peliculas;
+//
+//    @ManyToMany( mappedBy = "categorias")
+//    private Set<Pelicula> peliculas;
 
-    // @OneToMany(mappedBy = "categoria")
+    @OneToMany(mappedBy = "categoria")
+    //Se rompe el bucle hacia PeliculaCategoria, que a su vez no continua hacia Pelicula
+    @ToString.Exclude
+    private Set<PeliculaCategoria> peliculasCategorias;
 
 }

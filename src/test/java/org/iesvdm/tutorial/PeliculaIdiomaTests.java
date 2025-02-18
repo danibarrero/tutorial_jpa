@@ -2,8 +2,8 @@ package org.iesvdm.tutorial;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.iesvdm.tutorial.domain.Idioma;
-import org.iesvdm.tutorial.domain.Pelicula;
+import org.iesvdm.tutorial.domain.Ejer2.Idioma;
+import org.iesvdm.tutorial.domain.Ejer2.Pelicula;
 import org.iesvdm.tutorial.repository.IdiomaRepository;
 import org.iesvdm.tutorial.repository.PeliculaRepository;
 import org.junit.jupiter.api.*;
@@ -40,21 +40,34 @@ public class PeliculaIdiomaTests {
     @Order(1)
     void grabarMultiplesPeliculasIdioma() {
 
-        Idioma idioma1 = new Idioma(0, "español", new HashSet<>());
+        Idioma idioma1 = Idioma.builder()
+                .nombre("español")
+                .build();
         idiomaRepository.save(idioma1);
 
-        Pelicula pelicula1 = new Pelicula(0, "Pelicula1", idioma1);
+        Pelicula pelicula1 = Pelicula.builder()
+                .titulo("Pelicula 1")
+                .idioma(idioma1)
+                .build();
         idioma1.getPeliculas().add(pelicula1);
         peliculaRepository.save(pelicula1);
 
-        Pelicula pelicula2 = new Pelicula(0, "Pelicula2", idioma1);
+        Pelicula pelicula2 =  Pelicula.builder()
+                .titulo("Pelicula 2")
+                .idioma(idioma1)
+                .build();
         idioma1.getPeliculas().add(pelicula2);
         peliculaRepository.save(pelicula2);
 
-        Idioma idioma2 = new Idioma(0, "inglés", new HashSet<>());
+        Idioma idioma2 = Idioma.builder()
+                .nombre("inglés")
+                .build();
         idiomaRepository.save(idioma2);
 
-        Pelicula pelicula3 = new Pelicula(0, "Pelicula3", idioma2);
+        Pelicula pelicula3 = Pelicula.builder()
+                .titulo("Pelicula 3")
+                .idioma(idioma2)
+                .build();
         idioma2.getPeliculas().add(pelicula3);
         peliculaRepository.save(pelicula3);
 

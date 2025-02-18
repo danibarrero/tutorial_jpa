@@ -3,11 +3,11 @@ package org.iesvdm.tutorial;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.iesvdm.tutorial.domain.Categoria;
-import org.iesvdm.tutorial.domain.Idioma;
-import org.iesvdm.tutorial.domain.Pelicula;
-import org.iesvdm.tutorial.domain.PeliculaCategoria;
-import org.iesvdm.tutorial.enums.ClasificacionEnum;
+import org.iesvdm.tutorial.domain.Ejer2.Categoria;
+import org.iesvdm.tutorial.domain.Ejer2.Idioma;
+import org.iesvdm.tutorial.domain.Ejer2.Pelicula;
+import org.iesvdm.tutorial.domain.Ejer2.enums.ClasificacionEnum;
+import org.iesvdm.tutorial.domain.Ejer2.PeliculaCategoria;
 import org.iesvdm.tutorial.repository.CategoriaRepository;
 import org.iesvdm.tutorial.repository.IdiomaRepository;
 import org.iesvdm.tutorial.repository.PeliculaCategoriaRepository;
@@ -67,7 +67,7 @@ public class PeliculaCategoriaTests {
 
         Pelicula pelicula = Pelicula.builder()
                 .titulo("Pelicula 1")
-                .anyoLanzamiento(2020)
+                .anioLanzamiento(2020)
                 .duracionAlquiler(3)
                 .rentalRate(BigDecimal.valueOf(20.56D))
                 .idioma(idiomaFr)
@@ -77,11 +77,8 @@ public class PeliculaCategoriaTests {
         idiomaFr.getPeliculas().add(pelicula);
         peliculaRepository.save(pelicula);
 
-        PeliculaCategoria peliculaCategoria = new PeliculaCategoria(null,
-                                            categoria, pelicula);
-        peliculaCategoriaRepository.save(peliculaCategoria);
-
     }
+
 
     @Order(2)
     @Test

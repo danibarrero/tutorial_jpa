@@ -1,12 +1,9 @@
-package org.iesvdm.tutorial.domain;
+package org.iesvdm.tutorial.domain.Ejer2;
 
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.iesvdm.tutorial.serializer.PeliculaSerializer;
 
 import java.util.HashSet;
@@ -17,6 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
+@Builder
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id", scope = Idioma.class)
