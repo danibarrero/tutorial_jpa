@@ -2,7 +2,10 @@ package org.iesvdm.tutorial.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.iesvdm.tutorial.domain.Pelicula;
 
+import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -12,18 +15,18 @@ import java.util.Set;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
 @Entity
-public class Categoria {
-
+public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(length = 30, nullable = false)
     private String nombre;
-    // @ManyToMany(mappedBy = "categorias")
-    // private Set<Pelicula> peliculas;
+    private String apellidos;
+    private LocalDateTime ultimaActualizacion;
 
-    @OneToMany(mappedBy = "categoria")
+    @ManyToMany
+    @Builder.Default
+    private Set<Pelicula> peliculas = new HashSet<>();
 
 }

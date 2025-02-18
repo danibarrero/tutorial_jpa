@@ -2,8 +2,8 @@ package org.iesvdm.tutorial;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.iesvdm.tutorial.domain.Ejer2.Idioma;
-import org.iesvdm.tutorial.domain.Ejer2.Pelicula;
+import org.iesvdm.tutorial.domain.Idioma;
+import org.iesvdm.tutorial.domain.Pelicula;
 import org.iesvdm.tutorial.repository.IdiomaRepository;
 import org.iesvdm.tutorial.repository.PeliculaRepository;
 import org.junit.jupiter.api.*;
@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
+
+import java.util.HashSet;
 
 /**
  * TEST ONETOMANY EAGER
@@ -38,23 +40,23 @@ public class PeliculaIdiomaTests {
     @Order(1)
     void grabarMultiplesPeliculasIdioma() {
 
-//        Idioma idioma1 = new Idioma(0, "español", new HashSet<>());
-//        idiomaRepository.save(idioma1);
-//
-//        Pelicula pelicula1 = new Pelicula(0, "Pelicula1", idioma1);
-//        idioma1.getPeliculas().add(pelicula1);
-//        peliculaRepository.save(pelicula1);
-//
-//        Pelicula pelicula2 = new Pelicula(0, "Pelicula2", idioma1);
-//        idioma1.getPeliculas().add(pelicula2);
-//        peliculaRepository.save(pelicula2);
-//
-//        Idioma idioma2 = new Idioma(0, "inglés", new HashSet<>());
-//        idiomaRepository.save(idioma2);
-//
-//        Pelicula pelicula3 = new Pelicula(0, "Pelicula3", idioma2);
-//        idioma2.getPeliculas().add(pelicula3);
-//        peliculaRepository.save(pelicula3);
+        Idioma idioma1 = new Idioma(0, "español", new HashSet<>());
+        idiomaRepository.save(idioma1);
+
+        Pelicula pelicula1 = new Pelicula(0, "Pelicula1", idioma1);
+        idioma1.getPeliculas().add(pelicula1);
+        peliculaRepository.save(pelicula1);
+
+        Pelicula pelicula2 = new Pelicula(0, "Pelicula2", idioma1);
+        idioma1.getPeliculas().add(pelicula2);
+        peliculaRepository.save(pelicula2);
+
+        Idioma idioma2 = new Idioma(0, "inglés", new HashSet<>());
+        idiomaRepository.save(idioma2);
+
+        Pelicula pelicula3 = new Pelicula(0, "Pelicula3", idioma2);
+        idioma2.getPeliculas().add(pelicula3);
+        peliculaRepository.save(pelicula3);
 
     }
 

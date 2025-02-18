@@ -3,8 +3,6 @@ package org.iesvdm.tutorial.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,18 +10,23 @@ import java.util.Set;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
 @Entity
-public class Categoria {
+public class Socio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(length = 30, nullable = false)
-    private String nombre;
-    // @ManyToMany(mappedBy = "categorias")
-    // private Set<Pelicula> peliculas;
+    @Column(length = 9, unique = true)
+    private String nif;
 
-    @OneToMany(mappedBy = "categoria")
+    @Column(length = 30)
+    private String nombre;
+
+    @Column(length = 120)
+    private String apellidos;
+
+    @OneToOne(mappedBy = "socio")
+    private Tarjeta tarjeta;
 
 }
