@@ -25,7 +25,6 @@ import java.util.HashSet;
 @SpringBootTest
 public class PeliculaActorTests {
 
-
     @Autowired
     PeliculaRepository peliculaRepository;
 

@@ -1,11 +1,10 @@
-package org.iesvdm.tutorial.domain;
+package org.iesvdm.tutorial.domain.Heroes;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
-import org.iesvdm.tutorial.domain.Pelicula;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -15,18 +14,22 @@ import java.util.Set;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
 @Entity
-public class Actor {
+public class Heroe {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
 
+    @Column(length = 45)
     private String nombre;
-    private String apellidos;
-    private LocalDateTime ultimaActualizacion;
+
+    @JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss")
+    private LocalDateTime fechaNac;
+
+    @ManyToOne
+    private Mision mision;
 
     @ManyToMany
-    @Builder.Default
-    private Set<Pelicula> peliculas = new HashSet<>();
-
+    private Set<Poder> poderes;
 }
